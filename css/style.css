@@ -570,6 +570,13 @@ h1 span.highlight {
   -ms-overflow-style: none;
   scroll-behavior: smooth;
   width: 100%;
+  /* تمكين التمرير الأفقي عبر الماوس */
+  cursor: grab;
+  scroll-snap-type: x proximity;
+}
+
+.seg:active {
+  cursor: grabbing;
 }
 
 .seg::-webkit-scrollbar {
