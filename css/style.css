@@ -565,18 +565,42 @@ h1 span.highlight {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding: 4px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  padding: 4px 4px 12px 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-red) var(--bg-tertiary);
   scroll-behavior: smooth;
   width: 100%;
-  /* تمكين التمرير الأفقي عبر الماوس */
-  cursor: grab;
   scroll-snap-type: x proximity;
 }
 
 .seg:active {
   cursor: grabbing;
+}
+
+.seg::-webkit-scrollbar {
+  height: 6px;
+}
+
+.seg::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+}
+
+.seg::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 8px;
+}
+
+[data-theme="dark"] .seg::-webkit-scrollbar-thumb {
+  background-color: white;
+  border: 2px solid white;
+}
+
+.seg::-webkit-scrollbar-thumb:hover {
+  width: 12px;
+  background-color: var(--brand-red-hover);
 }
 
 .seg::-webkit-scrollbar {
